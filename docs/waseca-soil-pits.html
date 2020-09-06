@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <style type="text/css">
@@ -197,97 +199,36 @@ Nicollet? Official Series Description <a href="https://soilseries.sc.egov.usda.g
 </div>
 <div id="description-data-collected" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Description data collected</h2>
-<pre><code>##     PedonID           id hzname top bottom  hue value chroma Texture HzID
-## 1  Headland Pit-Canisteo     Ap   0     20    N   2.0      0     SiC    1
-## 2  Headland Pit-Canisteo      A  20     30    N   2.0      0     SiC    2
-## 3  Headland Pit-Canisteo     BA  30     40 2.5Y   3.0      1      CL    3
-## 4  Headland Pit-Canisteo    Bkg  40     70 2.5Y   6.0      2      CL    4
-## 5  Headland Pit-Canisteo      C  70    100 2.5Y   6.0      2      CL    5
-## 6     Field Pit-Nicollet     Ap   0     30 10YR   2.0      1      CL    6
-## 7     Field Pit-Nicollet      A  30     50 2.5Y   2.5      1      CL    7
-## 8     Field Pit-Nicollet     Bw  50     70 2.5Y   3.0      2      CL    8
-## 9     Field Pit-Nicollet    Bg?  70     90 2.5Y   4.0      2      CL    9
-## 10    Field Pit-Nicollet      C  90    110 2.5Y   4.0      3       L   10
-##       Effervescence
-## 1                NA
-## 2                SL
-## 3                ST
-## 4                ST
-## 5                ST
-## 6                NA
-## 7                NA
-## 8                NA
-## 9                NA
-## 10 ST - masses only</code></pre>
-<pre><code>##     PedonID           id hzname
-## 1  Headland Pit-Canisteo     Ap
-## 2  Headland Pit-Canisteo      A
-## 3  Headland Pit-Canisteo     BA
-## 4  Headland Pit-Canisteo    Bkg
-## 5  Headland Pit-Canisteo      C
-## 6     Field Pit-Nicollet     Ap
-## 7     Field Pit-Nicollet      A
-## 8     Field Pit-Nicollet     Bw
-## 9     Field Pit-Nicollet    Bg?
-## 10    Field Pit-Nicollet      C
-##                                                                             Redox
-## 1                                                                            &lt;NA&gt;
-## 2                                                                            &lt;NA&gt;
-## 3                                                                            &lt;NA&gt;
-## 4                                                                            &lt;NA&gt;
-## 5                                         Common, fine &amp; medium Fe conc 7.5YR 5/8
-## 6                                                                            &lt;NA&gt;
-## 7                                                                            &lt;NA&gt;
-## 8                                                                            &lt;NA&gt;
-## 9                                                      Few fine Fe conc 7.5YR 5/8
-## 10 Common fine Fe conc 7.5YR 5/8; some pockets of Fe-stained coarse sand &amp; gravel</code></pre>
-<pre><code>##     PedonID           id hzname
-## 1  Headland Pit-Canisteo     Ap
-## 2  Headland Pit-Canisteo      A
-## 3  Headland Pit-Canisteo     BA
-## 4  Headland Pit-Canisteo    Bkg
-## 5  Headland Pit-Canisteo      C
-## 6     Field Pit-Nicollet     Ap
-## 7     Field Pit-Nicollet      A
-## 8     Field Pit-Nicollet     Bw
-## 9     Field Pit-Nicollet    Bg?
-## 10    Field Pit-Nicollet      C
-##                                                                                                                              Notes
-## 1                                                                                                                             &lt;NA&gt;
-## 2                                                                                                                             &lt;NA&gt;
-## 3                                                                                                                             &lt;NA&gt;
-## 4                                                                                                                             &lt;NA&gt;
-## 5                                                                                                                             &lt;NA&gt;
-## 6                                                                                                                             &lt;NA&gt;
-## 7                                                                                                                             &lt;NA&gt;
-## 8                                                                                                                             &lt;NA&gt;
-## 9                                                                                                                             &lt;NA&gt;
-## 10 A few limestone coarse fragments 4-6cm in diameter; some carbonate masses that effervesce strongly, but overall matrix does not</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["PedonID"],"name":[1],"type":["chr"],"align":["left"]},{"label":["id"],"name":[2],"type":["chr"],"align":["left"]},{"label":["hzname"],"name":[3],"type":["chr"],"align":["left"]},{"label":["top"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["bottom"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["hue"],"name":[6],"type":["chr"],"align":["left"]},{"label":["value"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["chroma"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["Texture"],"name":[9],"type":["chr"],"align":["left"]},{"label":["HzID"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["Effervescence"],"name":[11],"type":["chr"],"align":["left"]},{"label":["Redox"],"name":[12],"type":["chr"],"align":["left"]},{"label":["Notes"],"name":[13],"type":["chr"],"align":["left"]},{"label":["soil_color"],"name":[14],"type":["chr"],"align":["left"]}],"data":[{"1":"Headland","2":"Pit-Canisteo","3":"Ap","4":"0","5":"20","6":"N","7":"2.0","8":"0","9":"SiC","10":"1","11":"__NA__","12":"NA","13":"NA","14":"#333333FF"},{"1":"Headland","2":"Pit-Canisteo","3":"A","4":"20","5":"30","6":"N","7":"2.0","8":"0","9":"SiC","10":"2","11":"SL","12":"NA","13":"NA","14":"#333333FF"},{"1":"Headland","2":"Pit-Canisteo","3":"BA","4":"30","5":"40","6":"2.5Y","7":"3.0","8":"1","9":"CL","10":"3","11":"ST","12":"NA","13":"NA","14":"#4E483FFF"},{"1":"Headland","2":"Pit-Canisteo","3":"Bkg","4":"40","5":"70","6":"2.5Y","7":"6.0","8":"2","9":"CL","10":"4","11":"ST","12":"NA","13":"NA","14":"#A0947CFF"},{"1":"Headland","2":"Pit-Canisteo","3":"C","4":"70","5":"100","6":"2.5Y","7":"6.0","8":"2","9":"CL","10":"5","11":"ST","12":"Common, fine & medium Fe conc 7.5YR 5/8","13":"NA","14":"#A0947CFF"},{"1":"Field","2":"Pit-Nicollet","3":"Ap","4":"0","5":"30","6":"10YR","7":"2.0","8":"1","9":"CL","10":"6","11":"__NA__","12":"NA","13":"NA","14":"#38302AFF"},{"1":"Field","2":"Pit-Nicollet","3":"A","4":"30","5":"50","6":"2.5Y","7":"2.5","8":"1","9":"CL","10":"7","11":"__NA__","12":"NA","13":"NA","14":"#36312BFF"},{"1":"Field","2":"Pit-Nicollet","3":"Bw","4":"50","5":"70","6":"2.5Y","7":"3.0","8":"2","9":"CL","10":"8","11":"__NA__","12":"NA","13":"NA","14":"#524735FF"},{"1":"Field","2":"Pit-Nicollet","3":"Bg?","4":"70","5":"90","6":"2.5Y","7":"4.0","8":"2","9":"CL","10":"9","11":"__NA__","12":"Few fine Fe conc 7.5YR 5/8","13":"NA","14":"#6C604AFF"},{"1":"Field","2":"Pit-Nicollet","3":"C","4":"90","5":"110","6":"2.5Y","7":"4.0","8":"3","9":"L","10":"10","11":"ST - masses only","12":"Common fine Fe conc 7.5YR 5/8; some pockets of Fe-stained coarse sand & gravel","13":"A few limestone coarse fragments 4-6cm in diameter; some carbonate masses that effervesce strongly, but overall matrix does not","14":"#715F3FFF"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div id="create-spc-objects" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Create SPC objects</h2>
 <p>SPC = SoilProfileCollection</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="waseca-soil-pits.html#cb6-1" aria-hidden="true"></a><span class="co"># promote data_min_st dataframe to SoilProfileCollection </span></span>
-<span id="cb6-2"><a href="waseca-soil-pits.html#cb6-2" aria-hidden="true"></a><span class="kw">depths</span>(data_pits) &lt;-<span class="st"> </span>id <span class="op">~</span><span class="st"> </span>top <span class="op">+</span><span class="st"> </span>bottom</span>
-<span id="cb6-3"><a href="waseca-soil-pits.html#cb6-3" aria-hidden="true"></a></span>
-<span id="cb6-4"><a href="waseca-soil-pits.html#cb6-4" aria-hidden="true"></a><span class="co">#check that we have successfully converted class to SPC</span></span>
-<span id="cb6-5"><a href="waseca-soil-pits.html#cb6-5" aria-hidden="true"></a><span class="kw">class</span>(data_pits)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="waseca-soil-pits.html#cb3-1" aria-hidden="true"></a><span class="co"># promote dataframe to SoilProfileCollection </span></span>
+<span id="cb3-2"><a href="waseca-soil-pits.html#cb3-2" aria-hidden="true"></a><span class="kw">depths</span>(data_pits) &lt;-<span class="st"> </span>id <span class="op">~</span><span class="st"> </span>top <span class="op">+</span><span class="st"> </span>bottom</span>
+<span id="cb3-3"><a href="waseca-soil-pits.html#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="waseca-soil-pits.html#cb3-4" aria-hidden="true"></a><span class="co">#check for class SPC</span></span>
+<span id="cb3-5"><a href="waseca-soil-pits.html#cb3-5" aria-hidden="true"></a><span class="kw">class</span>(data_pits)</span></code></pre></div>
 <pre><code>## [1] &quot;SoilProfileCollection&quot;
 ## attr(,&quot;package&quot;)
 ## [1] &quot;aqp&quot;</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="waseca-soil-pits.html#cb8-1" aria-hidden="true"></a><span class="co"># OSD data for the two series I think we have at the Waseca pits</span></span>
-<span id="cb8-2"><a href="waseca-soil-pits.html#cb8-2" aria-hidden="true"></a>osd_pedons &lt;-<span class="st"> </span><span class="kw">fetchOSD</span>(<span class="kw">c</span>(<span class="st">&#39;canisteo&#39;</span>, <span class="st">&#39;nicollet&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="waseca-soil-pits.html#cb5-1" aria-hidden="true"></a><span class="co"># OSD data for the two series I think we have at the Waseca pits</span></span>
+<span id="cb5-2"><a href="waseca-soil-pits.html#cb5-2" aria-hidden="true"></a>osd_pedons &lt;-<span class="st"> </span>soilDB<span class="op">::</span><span class="kw">fetchOSD</span>(<span class="kw">c</span>(<span class="st">&#39;canisteo&#39;</span>, <span class="st">&#39;nicollet&#39;</span>))</span></code></pre></div>
 </div>
 <div id="compare-field-descriptions-with-osds" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Compare field descriptions with OSDs</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="waseca-soil-pits.html#cb9-1" aria-hidden="true"></a><span class="co"># join the OSD pedons with the pit pedons</span></span>
-<span id="cb9-2"><a href="waseca-soil-pits.html#cb9-2" aria-hidden="true"></a>both &lt;-<span class="st"> </span>aqp<span class="op">::</span><span class="kw">union</span>(<span class="kw">list</span>(osd_pedons, data_pits))</span>
-<span id="cb9-3"><a href="waseca-soil-pits.html#cb9-3" aria-hidden="true"></a></span>
-<span id="cb9-4"><a href="waseca-soil-pits.html#cb9-4" aria-hidden="true"></a><span class="co"># set margins</span></span>
-<span id="cb9-5"><a href="waseca-soil-pits.html#cb9-5" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">xpd=</span><span class="ot">NA</span>)</span>
-<span id="cb9-6"><a href="waseca-soil-pits.html#cb9-6" aria-hidden="true"></a></span>
-<span id="cb9-7"><a href="waseca-soil-pits.html#cb9-7" aria-hidden="true"></a><span class="co"># plot soil profile collection</span></span>
-<span id="cb9-8"><a href="waseca-soil-pits.html#cb9-8" aria-hidden="true"></a><span class="kw">plotSPC</span>(both, <span class="dt">width =</span> <span class="fl">0.25</span>, <span class="dt">name =</span> <span class="st">&#39;hzname&#39;</span>, <span class="dt">plot.order=</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dt">cex.names =</span> <span class="fl">0.7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="waseca-soil-pits.html#cb6-1" aria-hidden="true"></a><span class="co"># join the OSD pedons with the pit pedons</span></span>
+<span id="cb6-2"><a href="waseca-soil-pits.html#cb6-2" aria-hidden="true"></a>both &lt;-<span class="st"> </span>aqp<span class="op">::</span><span class="kw">union</span>(<span class="kw">list</span>(osd_pedons, data_pits))</span>
+<span id="cb6-3"><a href="waseca-soil-pits.html#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="waseca-soil-pits.html#cb6-4" aria-hidden="true"></a><span class="co"># set margins</span></span>
+<span id="cb6-5"><a href="waseca-soil-pits.html#cb6-5" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">xpd=</span><span class="ot">NA</span>)</span>
+<span id="cb6-6"><a href="waseca-soil-pits.html#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="waseca-soil-pits.html#cb6-7" aria-hidden="true"></a><span class="co"># plot soil profile collection</span></span>
+<span id="cb6-8"><a href="waseca-soil-pits.html#cb6-8" aria-hidden="true"></a><span class="kw">plotSPC</span>(both, <span class="dt">width =</span> <span class="fl">0.25</span>, <span class="dt">name =</span> <span class="st">&#39;hzname&#39;</span>, <span class="dt">plot.order=</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dt">cex.names =</span> <span class="fl">0.7</span>)</span></code></pre></div>
 <p><img src="aqp-examples_files/figure-html/pedon-plot-1.png" width="672" /></p>
 
 </div>
@@ -343,8 +284,7 @@ gitbook.start({
 "download": ["aqp-examples.pdf", "aqp-examples.epub"],
 "toc": {
 "collapse": "subsection"
-},
-"df_print": "paged"
+}
 });
 });
 </script>

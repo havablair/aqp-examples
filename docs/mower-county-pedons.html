@@ -51,6 +51,8 @@
 
 
 
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <style type="text/css">
@@ -182,29 +184,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Visualizing some soil profile descriptions from SL in Mower County.</p>
 <p>This SPC plotting ideas post was helpful but I had to dig in the documentation to find it - not linked on the main aqp webpage?
 <a href="http://ncss-tech.github.io/AQP/aqp/SPC-plotting-ideas.html" class="uri">http://ncss-tech.github.io/AQP/aqp/SPC-plotting-ideas.html</a></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="mower-county-pedons.html#cb10-1" aria-hidden="true"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">echo =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb10-2"><a href="mower-county-pedons.html#cb10-2" aria-hidden="true"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">tidy =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb10-3"><a href="mower-county-pedons.html#cb10-3" aria-hidden="true"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">tidy.opts =</span> <span class="kw">list</span>(<span class="dt">width.cutoff=</span><span class="dv">60</span>))</span>
-<span id="cb10-4"><a href="mower-county-pedons.html#cb10-4" aria-hidden="true"></a></span>
-<span id="cb10-5"><a href="mower-county-pedons.html#cb10-5" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb10-6"><a href="mower-county-pedons.html#cb10-6" aria-hidden="true"></a><span class="kw">library</span>(aqp)</span>
-<span id="cb10-7"><a href="mower-county-pedons.html#cb10-7" aria-hidden="true"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb10-8"><a href="mower-county-pedons.html#cb10-8" aria-hidden="true"></a><span class="kw">library</span>(munsell)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="mower-county-pedons.html#cb7-1" aria-hidden="true"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">echo =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb7-2"><a href="mower-county-pedons.html#cb7-2" aria-hidden="true"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">tidy =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb7-3"><a href="mower-county-pedons.html#cb7-3" aria-hidden="true"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">tidy.opts =</span> <span class="kw">list</span>(<span class="dt">width.cutoff=</span><span class="dv">60</span>))</span>
+<span id="cb7-4"><a href="mower-county-pedons.html#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="mower-county-pedons.html#cb7-5" aria-hidden="true"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb7-6"><a href="mower-county-pedons.html#cb7-6" aria-hidden="true"></a><span class="kw">library</span>(aqp)</span>
+<span id="cb7-7"><a href="mower-county-pedons.html#cb7-7" aria-hidden="true"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb7-8"><a href="mower-county-pedons.html#cb7-8" aria-hidden="true"></a><span class="kw">library</span>(munsell)</span></code></pre></div>
 </div>
 <div id="load-data" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Load data</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="mower-county-pedons.html#cb11-1" aria-hidden="true"></a>pedons &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;./data/mower_pedons.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span>
-<span id="cb11-2"><a href="mower-county-pedons.html#cb11-2" aria-hidden="true"></a></span>
-<span id="cb11-3"><a href="mower-county-pedons.html#cb11-3" aria-hidden="true"></a>sites &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;./data/mower_site.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="mower-county-pedons.html#cb8-1" aria-hidden="true"></a>pedons &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;./data/mower_pedons.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</span>
+<span id="cb8-2"><a href="mower-county-pedons.html#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="mower-county-pedons.html#cb8-3" aria-hidden="true"></a>sites &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;./data/mower_site.xlsx&quot;</span>)</span></code></pre></div>
 </div>
 <div id="munsell-colors-conversion" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Munsell colors conversion</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="mower-county-pedons.html#cb12-1" aria-hidden="true"></a><span class="co"># convert munsell colors to R compatible colors and add</span></span>
-<span id="cb12-2"><a href="mower-county-pedons.html#cb12-2" aria-hidden="true"></a><span class="co"># horizon ID</span></span>
-<span id="cb12-3"><a href="mower-county-pedons.html#cb12-3" aria-hidden="true"></a>with_colors &lt;-<span class="st"> </span>pedons <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">soil_color =</span> <span class="kw">munsell2rgb</span>(hue, </span>
-<span id="cb12-4"><a href="mower-county-pedons.html#cb12-4" aria-hidden="true"></a>    value, chroma), <span class="dt">hzID =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(pedons)))</span>
-<span id="cb12-5"><a href="mower-county-pedons.html#cb12-5" aria-hidden="true"></a></span>
-<span id="cb12-6"><a href="mower-county-pedons.html#cb12-6" aria-hidden="true"></a>with_colors</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="mower-county-pedons.html#cb9-1" aria-hidden="true"></a><span class="co"># convert munsell colors to R compatible colors and add</span></span>
+<span id="cb9-2"><a href="mower-county-pedons.html#cb9-2" aria-hidden="true"></a><span class="co"># horizon ID</span></span>
+<span id="cb9-3"><a href="mower-county-pedons.html#cb9-3" aria-hidden="true"></a>with_colors &lt;-<span class="st"> </span>pedons <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">soil_color =</span> <span class="kw">munsell2rgb</span>(hue, </span>
+<span id="cb9-4"><a href="mower-county-pedons.html#cb9-4" aria-hidden="true"></a>    value, chroma), <span class="dt">hzID =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(pedons)))</span>
+<span id="cb9-5"><a href="mower-county-pedons.html#cb9-5" aria-hidden="true"></a></span>
+<span id="cb9-6"><a href="mower-county-pedons.html#cb9-6" aria-hidden="true"></a>with_colors</span></code></pre></div>
 <pre><code>##        id top bottom name  hue value chroma soil_color hzID
 ## 1  1CVA-8   0      2   A1 2.5Y   2.5      1  #36312BFF    1
 ## 2  1CVA-8   2      3   A2 2.5Y   2.5      1  #36312BFF    2
@@ -235,16 +237,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="promote-dataframe-to-spc" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Promote dataframe to SPC</h2>
 <p>SPC = soil profile collection (S4 object)</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="mower-county-pedons.html#cb14-1" aria-hidden="true"></a><span class="co"># promote dataframe to SPC object</span></span>
-<span id="cb14-2"><a href="mower-county-pedons.html#cb14-2" aria-hidden="true"></a><span class="kw">depths</span>(with_colors) &lt;-<span class="st"> </span>id <span class="op">~</span><span class="st"> </span>top <span class="op">+</span><span class="st"> </span>bottom</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="mower-county-pedons.html#cb11-1" aria-hidden="true"></a><span class="co"># promote dataframe to SPC object</span></span>
+<span id="cb11-2"><a href="mower-county-pedons.html#cb11-2" aria-hidden="true"></a><span class="kw">depths</span>(with_colors) &lt;-<span class="st"> </span>id <span class="op">~</span><span class="st"> </span>top <span class="op">+</span><span class="st"> </span>bottom</span></code></pre></div>
 <pre><code>## using `hzID` as a unique horizon ID</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="mower-county-pedons.html#cb16-1" aria-hidden="true"></a><span class="co"># should be &#39;SoilProfileCollection&#39;</span></span>
-<span id="cb16-2"><a href="mower-county-pedons.html#cb16-2" aria-hidden="true"></a><span class="kw">class</span>(with_colors)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="mower-county-pedons.html#cb13-1" aria-hidden="true"></a><span class="co"># should be &#39;SoilProfileCollection&#39;</span></span>
+<span id="cb13-2"><a href="mower-county-pedons.html#cb13-2" aria-hidden="true"></a><span class="kw">class</span>(with_colors)</span></code></pre></div>
 <pre><code>## [1] &quot;SoilProfileCollection&quot;
 ## attr(,&quot;package&quot;)
 ## [1] &quot;aqp&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="mower-county-pedons.html#cb18-1" aria-hidden="true"></a><span class="co"># inspect output</span></span>
-<span id="cb18-2"><a href="mower-county-pedons.html#cb18-2" aria-hidden="true"></a><span class="kw">str</span>(with_colors)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="mower-county-pedons.html#cb15-1" aria-hidden="true"></a><span class="co"># inspect output</span></span>
+<span id="cb15-2"><a href="mower-county-pedons.html#cb15-2" aria-hidden="true"></a><span class="kw">str</span>(with_colors)</span></code></pre></div>
 <pre><code>## Formal class &#39;SoilProfileCollection&#39; [package &quot;aqp&quot;] with 11 slots
 ##   ..@ idcol       : chr &quot;id&quot;
 ##   ..@ hzidcol     : chr &quot;hzID&quot;
@@ -272,58 +274,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   .. .. .. .. ..@ projargs: chr NA
 ##   ..@ diagnostic  :&#39;data.frame&#39;:	0 obs. of  0 variables
 ##   ..@ restrictions:&#39;data.frame&#39;:	0 obs. of  0 variables</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="mower-county-pedons.html#cb20-1" aria-hidden="true"></a><span class="co"># change the depth units (metadata/leabel) to inches -</span></span>
-<span id="cb20-2"><a href="mower-county-pedons.html#cb20-2" aria-hidden="true"></a><span class="co"># default is cm</span></span>
-<span id="cb20-3"><a href="mower-county-pedons.html#cb20-3" aria-hidden="true"></a><span class="kw">depth_units</span>(with_colors) &lt;-<span class="st"> &quot;inches&quot;</span></span>
-<span id="cb20-4"><a href="mower-county-pedons.html#cb20-4" aria-hidden="true"></a></span>
-<span id="cb20-5"><a href="mower-county-pedons.html#cb20-5" aria-hidden="true"></a><span class="co"># check that unit conversion worked</span></span>
-<span id="cb20-6"><a href="mower-county-pedons.html#cb20-6" aria-hidden="true"></a><span class="kw">metadata</span>(with_colors)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="mower-county-pedons.html#cb17-1" aria-hidden="true"></a><span class="co"># change the depth units (metadata/leabel) to inches -</span></span>
+<span id="cb17-2"><a href="mower-county-pedons.html#cb17-2" aria-hidden="true"></a><span class="co"># default is cm</span></span>
+<span id="cb17-3"><a href="mower-county-pedons.html#cb17-3" aria-hidden="true"></a><span class="kw">depth_units</span>(with_colors) &lt;-<span class="st"> &quot;inches&quot;</span></span>
+<span id="cb17-4"><a href="mower-county-pedons.html#cb17-4" aria-hidden="true"></a></span>
+<span id="cb17-5"><a href="mower-county-pedons.html#cb17-5" aria-hidden="true"></a><span class="co"># check that unit conversion worked</span></span>
+<span id="cb17-6"><a href="mower-county-pedons.html#cb17-6" aria-hidden="true"></a><span class="kw">metadata</span>(with_colors)</span></code></pre></div>
 <pre><code>##   depth_units
 ## 1      inches</code></pre>
 </div>
 <div id="plot-the-spc-object" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Plot the SPC object</h2>
 <p>Most basic version here.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="mower-county-pedons.html#cb22-1" aria-hidden="true"></a><span class="co"># margin specification (bottom, left, top, right) default is</span></span>
-<span id="cb22-2"><a href="mower-county-pedons.html#cb22-2" aria-hidden="true"></a><span class="co"># typically c(5,4,4,2)</span></span>
-<span id="cb22-3"><a href="mower-county-pedons.html#cb22-3" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb22-4"><a href="mower-county-pedons.html#cb22-4" aria-hidden="true"></a></span>
-<span id="cb22-5"><a href="mower-county-pedons.html#cb22-5" aria-hidden="true"></a><span class="kw">plot</span>(with_colors, <span class="dt">name =</span> <span class="st">&quot;name&quot;</span>, <span class="dt">width =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="mower-county-pedons.html#cb19-1" aria-hidden="true"></a><span class="co"># margin specification (bottom, left, top, right) default is</span></span>
+<span id="cb19-2"><a href="mower-county-pedons.html#cb19-2" aria-hidden="true"></a><span class="co"># typically c(5,4,4,2)</span></span>
+<span id="cb19-3"><a href="mower-county-pedons.html#cb19-3" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb19-4"><a href="mower-county-pedons.html#cb19-4" aria-hidden="true"></a></span>
+<span id="cb19-5"><a href="mower-county-pedons.html#cb19-5" aria-hidden="true"></a><span class="kw">plot</span>(with_colors, <span class="dt">name =</span> <span class="st">&quot;name&quot;</span>, <span class="dt">width =</span> <span class="fl">0.2</span>)</span></code></pre></div>
 <p><img src="aqp-examples_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="add-dashed-lines" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Add dashed lines</h2>
 <p>Want to represent the lag line (transition to older till parent material) with a dotted line across each soil profile.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="mower-county-pedons.html#cb23-1" aria-hidden="true"></a><span class="co"># grab lag line depth from sites df</span></span>
-<span id="cb23-2"><a href="mower-county-pedons.html#cb23-2" aria-hidden="true"></a></span>
-<span id="cb23-3"><a href="mower-county-pedons.html#cb23-3" aria-hidden="true"></a>lag &lt;-<span class="st"> </span>sites <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(id, lag_in)</span>
-<span id="cb23-4"><a href="mower-county-pedons.html#cb23-4" aria-hidden="true"></a></span>
-<span id="cb23-5"><a href="mower-county-pedons.html#cb23-5" aria-hidden="true"></a><span class="co"># need the ids in alpha order to align with pedons plotted</span></span>
-<span id="cb23-6"><a href="mower-county-pedons.html#cb23-6" aria-hidden="true"></a><span class="co"># alphabetically below, (otherwise the lag lines get plotted</span></span>
-<span id="cb23-7"><a href="mower-county-pedons.html#cb23-7" aria-hidden="true"></a><span class="co"># on the wrong pedon).  Find a more robust solution for this</span></span>
-<span id="cb23-8"><a href="mower-county-pedons.html#cb23-8" aria-hidden="true"></a><span class="co"># in the future</span></span>
-<span id="cb23-9"><a href="mower-county-pedons.html#cb23-9" aria-hidden="true"></a></span>
-<span id="cb23-10"><a href="mower-county-pedons.html#cb23-10" aria-hidden="true"></a>lag_sorted &lt;-<span class="st"> </span>lag[<span class="kw">order</span>(lag<span class="op">$</span>id), ]</span>
-<span id="cb23-11"><a href="mower-county-pedons.html#cb23-11" aria-hidden="true"></a></span>
-<span id="cb23-12"><a href="mower-county-pedons.html#cb23-12" aria-hidden="true"></a><span class="co"># keep in mind that each pedon is centered over its integer</span></span>
-<span id="cb23-13"><a href="mower-county-pedons.html#cb23-13" aria-hidden="true"></a><span class="co"># index on the x-axis of the plot (first pedon centered over</span></span>
-<span id="cb23-14"><a href="mower-county-pedons.html#cb23-14" aria-hidden="true"></a><span class="co"># 1, second over 2, etc.)</span></span>
-<span id="cb23-15"><a href="mower-county-pedons.html#cb23-15" aria-hidden="true"></a>x.pos &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(with_colors)</span>
-<span id="cb23-16"><a href="mower-county-pedons.html#cb23-16" aria-hidden="true"></a></span>
-<span id="cb23-17"><a href="mower-county-pedons.html#cb23-17" aria-hidden="true"></a><span class="co"># segments function needs vectors of coordinates: specifies</span></span>
-<span id="cb23-18"><a href="mower-county-pedons.html#cb23-18" aria-hidden="true"></a><span class="co"># start/end the line segments see</span></span>
-<span id="cb23-19"><a href="mower-county-pedons.html#cb23-19" aria-hidden="true"></a><span class="co"># https://bookdown.org/ndphillips/YaRrr/low-level-plotting-functions.html</span></span>
-<span id="cb23-20"><a href="mower-county-pedons.html#cb23-20" aria-hidden="true"></a>from.x &lt;-<span class="st"> </span><span class="kw">c</span>(x.pos <span class="op">-</span><span class="st"> </span><span class="fl">0.2</span>)</span>
-<span id="cb23-21"><a href="mower-county-pedons.html#cb23-21" aria-hidden="true"></a>to.x &lt;-<span class="st"> </span><span class="kw">c</span>(x.pos <span class="op">+</span><span class="st"> </span><span class="fl">0.2</span>)</span>
-<span id="cb23-22"><a href="mower-county-pedons.html#cb23-22" aria-hidden="true"></a>from.y &lt;-<span class="st"> </span>lag_sorted<span class="op">$</span>lag_in</span>
-<span id="cb23-23"><a href="mower-county-pedons.html#cb23-23" aria-hidden="true"></a>to.y &lt;-<span class="st"> </span>lag_sorted<span class="op">$</span>lag_in</span>
-<span id="cb23-24"><a href="mower-county-pedons.html#cb23-24" aria-hidden="true"></a></span>
-<span id="cb23-25"><a href="mower-county-pedons.html#cb23-25" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>))</span>
-<span id="cb23-26"><a href="mower-county-pedons.html#cb23-26" aria-hidden="true"></a></span>
-<span id="cb23-27"><a href="mower-county-pedons.html#cb23-27" aria-hidden="true"></a><span class="kw">plot</span>(with_colors, <span class="dt">name =</span> <span class="st">&quot;name&quot;</span>, <span class="dt">width =</span> <span class="fl">0.2</span>)</span>
-<span id="cb23-28"><a href="mower-county-pedons.html#cb23-28" aria-hidden="true"></a><span class="co"># lwd is line width, lty is linetype</span></span>
-<span id="cb23-29"><a href="mower-county-pedons.html#cb23-29" aria-hidden="true"></a><span class="kw">segments</span>(<span class="dt">x0 =</span> from.x, <span class="dt">x1 =</span> to.x, <span class="dt">y0 =</span> from.y, <span class="dt">y1 =</span> to.y, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, </span>
-<span id="cb23-30"><a href="mower-county-pedons.html#cb23-30" aria-hidden="true"></a>    <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">lty =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="mower-county-pedons.html#cb20-1" aria-hidden="true"></a><span class="co"># grab lag line depth from sites df</span></span>
+<span id="cb20-2"><a href="mower-county-pedons.html#cb20-2" aria-hidden="true"></a></span>
+<span id="cb20-3"><a href="mower-county-pedons.html#cb20-3" aria-hidden="true"></a>lag &lt;-<span class="st"> </span>sites <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(id, lag_in)</span>
+<span id="cb20-4"><a href="mower-county-pedons.html#cb20-4" aria-hidden="true"></a></span>
+<span id="cb20-5"><a href="mower-county-pedons.html#cb20-5" aria-hidden="true"></a><span class="co"># need the ids in alpha order to align with pedons plotted</span></span>
+<span id="cb20-6"><a href="mower-county-pedons.html#cb20-6" aria-hidden="true"></a><span class="co"># alphabetically below, (otherwise the lag lines get plotted</span></span>
+<span id="cb20-7"><a href="mower-county-pedons.html#cb20-7" aria-hidden="true"></a><span class="co"># on the wrong pedon).  Find a more robust solution for this</span></span>
+<span id="cb20-8"><a href="mower-county-pedons.html#cb20-8" aria-hidden="true"></a><span class="co"># in the future</span></span>
+<span id="cb20-9"><a href="mower-county-pedons.html#cb20-9" aria-hidden="true"></a></span>
+<span id="cb20-10"><a href="mower-county-pedons.html#cb20-10" aria-hidden="true"></a>lag_sorted &lt;-<span class="st"> </span>lag[<span class="kw">order</span>(lag<span class="op">$</span>id), ]</span>
+<span id="cb20-11"><a href="mower-county-pedons.html#cb20-11" aria-hidden="true"></a></span>
+<span id="cb20-12"><a href="mower-county-pedons.html#cb20-12" aria-hidden="true"></a><span class="co"># keep in mind that each pedon is centered over its integer</span></span>
+<span id="cb20-13"><a href="mower-county-pedons.html#cb20-13" aria-hidden="true"></a><span class="co"># index on the x-axis of the plot (first pedon centered over</span></span>
+<span id="cb20-14"><a href="mower-county-pedons.html#cb20-14" aria-hidden="true"></a><span class="co"># 1, second over 2, etc.)</span></span>
+<span id="cb20-15"><a href="mower-county-pedons.html#cb20-15" aria-hidden="true"></a>x.pos &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(with_colors)</span>
+<span id="cb20-16"><a href="mower-county-pedons.html#cb20-16" aria-hidden="true"></a></span>
+<span id="cb20-17"><a href="mower-county-pedons.html#cb20-17" aria-hidden="true"></a><span class="co"># segments function needs vectors of coordinates: specifies</span></span>
+<span id="cb20-18"><a href="mower-county-pedons.html#cb20-18" aria-hidden="true"></a><span class="co"># start/end the line segments see</span></span>
+<span id="cb20-19"><a href="mower-county-pedons.html#cb20-19" aria-hidden="true"></a><span class="co"># https://bookdown.org/ndphillips/YaRrr/low-level-plotting-functions.html</span></span>
+<span id="cb20-20"><a href="mower-county-pedons.html#cb20-20" aria-hidden="true"></a>from.x &lt;-<span class="st"> </span><span class="kw">c</span>(x.pos <span class="op">-</span><span class="st"> </span><span class="fl">0.2</span>)</span>
+<span id="cb20-21"><a href="mower-county-pedons.html#cb20-21" aria-hidden="true"></a>to.x &lt;-<span class="st"> </span><span class="kw">c</span>(x.pos <span class="op">+</span><span class="st"> </span><span class="fl">0.2</span>)</span>
+<span id="cb20-22"><a href="mower-county-pedons.html#cb20-22" aria-hidden="true"></a>from.y &lt;-<span class="st"> </span>lag_sorted<span class="op">$</span>lag_in</span>
+<span id="cb20-23"><a href="mower-county-pedons.html#cb20-23" aria-hidden="true"></a>to.y &lt;-<span class="st"> </span>lag_sorted<span class="op">$</span>lag_in</span>
+<span id="cb20-24"><a href="mower-county-pedons.html#cb20-24" aria-hidden="true"></a></span>
+<span id="cb20-25"><a href="mower-county-pedons.html#cb20-25" aria-hidden="true"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>))</span>
+<span id="cb20-26"><a href="mower-county-pedons.html#cb20-26" aria-hidden="true"></a></span>
+<span id="cb20-27"><a href="mower-county-pedons.html#cb20-27" aria-hidden="true"></a><span class="kw">plot</span>(with_colors, <span class="dt">name =</span> <span class="st">&quot;name&quot;</span>, <span class="dt">width =</span> <span class="fl">0.2</span>)</span>
+<span id="cb20-28"><a href="mower-county-pedons.html#cb20-28" aria-hidden="true"></a><span class="co"># lwd is line width, lty is linetype</span></span>
+<span id="cb20-29"><a href="mower-county-pedons.html#cb20-29" aria-hidden="true"></a><span class="kw">segments</span>(<span class="dt">x0 =</span> from.x, <span class="dt">x1 =</span> to.x, <span class="dt">y0 =</span> from.y, <span class="dt">y1 =</span> to.y, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb20-30"><a href="mower-county-pedons.html#cb20-30" aria-hidden="true"></a>    <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="dt">lty =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="aqp-examples_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="references" class="section level2" number="3.7">
@@ -331,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Low level plotting functions, including segments() and text(), which might be useful for adding additional labels (such as “lag line”) in the future: <a href="https://bookdown.org/ndphillips/YaRrr/low-level-plotting-functions.html" class="uri">https://bookdown.org/ndphillips/YaRrr/low-level-plotting-functions.html</a></p>
 <p>SPC plotting ideas:
 <a href="http://ncss-tech.github.io/AQP/aqp/SPC-plotting-ideas.html" class="uri">http://ncss-tech.github.io/AQP/aqp/SPC-plotting-ideas.html</a></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="mower-county-pedons.html#cb24-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">session_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="mower-county-pedons.html#cb21-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">session_info</span>()</span></code></pre></div>
 <pre><code>## - Session info ---------------------------------------------------------------
 ##  setting  value                       
 ##  version  R version 3.6.3 (2020-02-29)
@@ -489,8 +491,7 @@ gitbook.start({
 "download": ["aqp-examples.pdf", "aqp-examples.epub"],
 "toc": {
 "collapse": "subsection"
-},
-"df_print": "paged"
+}
 });
 });
 </script>

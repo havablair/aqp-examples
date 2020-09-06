@@ -45,13 +45,7 @@ data_df <- data_df %>%
 data_pits <- data_df %>% 
   mutate(soil_color = munsell2rgb(hue, value, chroma))
 
-data_pits[ ,1:11]
-
-data_pits %>% 
-  select(PedonID, id, hzname, Redox)
-
-data_pits %>% 
-  select(PedonID, id, hzname, Notes)
+rmarkdown::paged_table(data_pits)
 
 ```
 
@@ -60,14 +54,14 @@ data_pits %>%
 SPC = SoilProfileCollection 
 
 ```{r spc-obj-waseca}
-# promote data_min_st dataframe to SoilProfileCollection 
+# promote dataframe to SoilProfileCollection 
 depths(data_pits) <- id ~ top + bottom
 
-#check that we have successfully converted class to SPC
+#check for class SPC
 class(data_pits)
 
 # OSD data for the two series I think we have at the Waseca pits
-osd_pedons <- fetchOSD(c('canisteo', 'nicollet'))
+osd_pedons <- soilDB::fetchOSD(c('canisteo', 'nicollet'))
 
 ```
 

@@ -1,0 +1,136 @@
+# Mower County Pedons
+
+date: 2020-09-06
+
+## Overview
+
+Visualizing some soil profile descriptions from SL in Mower County.  
+
+This SPC plotting ideas post was helpful but I had to dig in the documentation to find it - not linked on the main aqp webpage? 
+http://ncss-tech.github.io/AQP/aqp/SPC-plotting-ideas.html 
+
+```{r setup-mw, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(tidy = TRUE)
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff=60))
+
+library(tidyverse)
+library(aqp)
+library(readxl)
+library(munsell)
+
+```
+
+
+## Load data
+
+```{r data-mw}
+
+pedons <- read_excel("./data/mower_pedons.xlsx") %>% 
+  as.data.frame()
+
+sites <- read_excel("./data/mower_site.xlsx")
+
+```
+
+## Munsell colors conversion
+
+```{r}
+#convert munsell colors to R compatible colors and add horizon ID
+with_colors <- pedons %>% 
+  mutate(soil_color = munsell2rgb(hue, value, chroma),
+         hzID = c(1:nrow(pedons)))
+
+with_colors
+
+```
+
+## Promote dataframe to SPC
+
+SPC = soil profile collection (S4 object)
+
+```{r}
+# promote dataframe to SPC object 
+depths(with_colors) <- id ~ top + bottom
+
+# should be "SoilProfileCollection"
+class(with_colors)
+
+# inspect output 
+str(with_colors)
+
+# change the depth units (metadata/leabel) to inches - default is cm
+depth_units(with_colors) <- 'inches'
+
+# check that unit conversion worked
+metadata(with_colors)
+
+```
+
+## Plot the SPC object
+
+Most basic version here.
+
+```{r}
+# margin specification (bottom, left, top, right)
+# default is typically c(5,4,4,2)
+par(mar = c(1,1,1,1))
+
+plot(with_colors, name = "name", width = 0.2)
+
+```
+
+## Add dashed lines 
+
+Want to represent the lag line (transition to older till parent material) with a dotted line across each soil profile.
+
+```{r}
+# grab lag line depth from sites df
+
+lag <- sites %>% 
+  select(id, lag_in)
+
+# need the ids in alpha order to align with pedons plotted alphabetically below (otherwise the lag lines get plotted on the wrong pedon).  Find a more robust solution for this in the future
+
+lag_sorted <- lag[order(lag$id),]
+
+# keep in mind that each pedon is centered over its integer index on the x-axis of the plot (first pedon centered over 1, second over 2, etc.)
+x.pos <- 1:length(with_colors)
+
+# segments function needs vectors of coordinates:
+#specifies start/end the line segments
+# see https://bookdown.org/ndphillips/YaRrr/low-level-plotting-functions.html
+from.x <- c(x.pos - 0.2)
+to.x <- c(x.pos + 0.2)
+from.y <- lag_sorted$lag_in
+to.y <- lag_sorted$lag_in 
+
+par(mar = c(0,2,0,2))
+
+plot(with_colors, name = "name",
+     width = 0.2)
+
+segments(x0 = from.x,
+         x1 = to.x,
+         y0 = from.y,
+         y1 = to.y, 
+         col = "red", 
+         lwd = 3, # width of line
+         lty = 3)  # line type
+
+
+```
+
+# References 
+
+Low level plotting functions, including segments() and text(), which might be useful for adding additional labels (such as "lag line") in the future:  https://bookdown.org/ndphillips/YaRrr/low-level-plotting-functions.html  
+
+SPC plotting ideas: 
+http://ncss-tech.github.io/AQP/aqp/SPC-plotting-ideas.html  
+
+
+
+```{r echo=TRUE, include=TRUE, results='markup'}
+devtools::session_info()
+```
+

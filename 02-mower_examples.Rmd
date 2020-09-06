@@ -90,7 +90,9 @@ Want to represent the lag line (transition to older till parent material) with a
 lag <- sites %>% 
   select(id, lag_in)
 
-# need the ids in alpha order to align with pedons plotted alphabetically below (otherwise the lag lines get plotted on the wrong pedon).  Find a more robust solution for this in the future
+# need the ids in alpha order to align with pedons plotted alphabetically below,
+# (otherwise the lag lines get plotted on the wrong pedon).  
+# Find a more robust solution for this in the future
 
 lag_sorted <- lag[order(lag$id),]
 
@@ -109,19 +111,19 @@ par(mar = c(0,2,0,2))
 
 plot(with_colors, name = "name",
      width = 0.2)
-
+# lwd is line width, lty is linetype
 segments(x0 = from.x,
          x1 = to.x,
          y0 = from.y,
          y1 = to.y, 
          col = "red", 
-         lwd = 3, # width of line
-         lty = 3)  # line type
+         lwd = 3,
+         lty = 3)
 
 
 ```
 
-# References 
+## References 
 
 Low level plotting functions, including segments() and text(), which might be useful for adding additional labels (such as "lag line") in the future:  https://bookdown.org/ndphillips/YaRrr/low-level-plotting-functions.html  
 

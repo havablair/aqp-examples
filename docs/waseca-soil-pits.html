@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Waseca Soil Pits | AQP Examples</title>
+  <title>2 Waseca Soil Pits | AQP Examples</title>
   <meta name="description" content="This is a collection of soil profile visualizations made with the aqp R package." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Waseca Soil Pits | AQP Examples" />
+  <meta property="og:title" content="2 Waseca Soil Pits | AQP Examples" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Waseca Soil Pits | AQP Examples" />
+  <meta name="twitter:title" content="2 Waseca Soil Pits | AQP Examples" />
   
   <meta name="twitter:description" content="This is a collection of soil profile visualizations made with the aqp R package." />
   
@@ -133,7 +133,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">AQP Examples</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#reference"><i class="fa fa-check"></i><b>1.1</b> Reference</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="waseca-soil-pits.html"><a href="waseca-soil-pits.html"><i class="fa fa-check"></i><b>2</b> Waseca Soil Pits</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="waseca-soil-pits.html"><a href="waseca-soil-pits.html#about"><i class="fa fa-check"></i><b>2.1</b> About</a></li>
@@ -149,8 +152,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#promote-dataframe-to-spc"><i class="fa fa-check"></i><b>3.4</b> Promote dataframe to SPC</a></li>
 <li class="chapter" data-level="3.5" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#plot-the-spc-object"><i class="fa fa-check"></i><b>3.5</b> Plot the SPC object</a></li>
 <li class="chapter" data-level="3.6" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#add-dashed-lines"><i class="fa fa-check"></i><b>3.6</b> Add dashed lines</a></li>
+<li class="chapter" data-level="3.7" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#references"><i class="fa fa-check"></i><b>3.7</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>4</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -172,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="waseca-soil-pits" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Waseca Soil Pits</h1>
+<h1><span class="header-section-number">2</span> Waseca Soil Pits</h1>
 <p>date: 2020-07-11</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="waseca-soil-pits.html#cb2-1" aria-hidden="true"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">echo =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb2-2"><a href="waseca-soil-pits.html#cb2-2" aria-hidden="true"></a><span class="kw">library</span>(dplyr)</span>
@@ -285,7 +288,7 @@ Nicollet? Official Series Description <a href="https://soilseries.sc.egov.usda.g
 <span id="cb9-6"><a href="waseca-soil-pits.html#cb9-6" aria-hidden="true"></a></span>
 <span id="cb9-7"><a href="waseca-soil-pits.html#cb9-7" aria-hidden="true"></a><span class="co"># plot soil profile collection</span></span>
 <span id="cb9-8"><a href="waseca-soil-pits.html#cb9-8" aria-hidden="true"></a><span class="kw">plotSPC</span>(both, <span class="dt">width =</span> <span class="fl">0.25</span>, <span class="dt">name =</span> <span class="st">&#39;hzname&#39;</span>, <span class="dt">plot.order=</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>), <span class="dt">cex.names =</span> <span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/pedon-plot-1.png" width="672" /></p>
+<p><img src="aqp-examples_files/figure-html/pedon-plot-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -337,10 +340,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": ["aqp-examples.pdf", "aqp-examples.epub"],
 "toc": {
 "collapse": "subsection"
-}
+},
+"df_print": "paged"
 });
 });
 </script>

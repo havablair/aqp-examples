@@ -133,7 +133,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">AQP Examples</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#reference"><i class="fa fa-check"></i><b>1.1</b> Reference</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="waseca-soil-pits.html"><a href="waseca-soil-pits.html"><i class="fa fa-check"></i><b>2</b> Waseca Soil Pits</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="waseca-soil-pits.html"><a href="waseca-soil-pits.html#about"><i class="fa fa-check"></i><b>2.1</b> About</a></li>
@@ -149,8 +152,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#promote-dataframe-to-spc"><i class="fa fa-check"></i><b>3.4</b> Promote dataframe to SPC</a></li>
 <li class="chapter" data-level="3.5" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#plot-the-spc-object"><i class="fa fa-check"></i><b>3.5</b> Plot the SPC object</a></li>
 <li class="chapter" data-level="3.6" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#add-dashed-lines"><i class="fa fa-check"></i><b>3.6</b> Add dashed lines</a></li>
+<li class="chapter" data-level="3.7" data-path="mower-county-pedons.html"><a href="mower-county-pedons.html#references"><i class="fa fa-check"></i><b>3.7</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>4</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -177,13 +180,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="date"><em>2020-09-06</em></p>
 </div>
 <div id="overview" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Overview</h1>
+<h1><span class="header-section-number">1</span> Overview</h1>
 <p>I am learning how to create soil profile visualizations to support several different projects. This is a record of the visualizations I make with the <a href="http://ncss-tech.github.io/AQP/"><code>aqp</code> package</a>.</p>
 <p>The <strong>aqp</strong> package can be installed from CRAN or the development version directly from github:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true"></a><span class="co">#install.packages(&quot;aqp&quot;)</span></span>
 <span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true"></a><span class="co"># or the development version</span></span>
 <span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true"></a><span class="co"># devtools::install_github(&quot;ncss-tech/aqp&quot;)</span></span></code></pre></div>
+<div id="reference" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Reference</h2>
+<p>Beaudette Dd, Roudier P, O’Geen A (2013). Algorithms for quantitative pedology: A toolkit for soil scientists, volume 52. <a href="http://ncss-tech.github.io/AQP/" class="uri">http://ncss-tech.github.io/AQP/</a>.</p>
 
+</div>
 </div>
             </section>
 
@@ -233,10 +240,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": ["aqp-examples.pdf", "aqp-examples.epub"],
 "toc": {
 "collapse": "subsection"
-}
+},
+"df_print": "paged"
 });
 });
 </script>
